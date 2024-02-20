@@ -36,10 +36,10 @@ class OHMWrapper:
         try:
             return self.cpu_data[-1][1]
         except IndexError:
-            return 0.0
+            return 100.0
 
     def get_gpu_temp(self) -> float:
         try:
             return self.gpu_data[-1][1]
         except IndexError:
-            return 0.0
+            return 100.0
