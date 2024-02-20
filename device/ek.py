@@ -1,5 +1,3 @@
-import threading
-
 import libusb_package
 import usb.core
 
@@ -31,8 +29,6 @@ class EKDevice:
         if self.device is None:
             raise ValueError("No EK device found")
 
-        self.lock = threading.Lock()
-
     @property
     def manufacturer(self) -> str:
         return self.device.manufacturer
@@ -60,6 +56,5 @@ class EKDevice:
         self.device.write(EK_ENDPOINTS[endpoint]["write"], data)
 
     def request(self, request: bytearray, endpoint: int = 0) -> bytearray:
-        with self.lock:
-            self._write(request, endpoint)
-            return self._read(endpoint)
+        self._write(request, endpoint)
+        return self._read(endpoint)
