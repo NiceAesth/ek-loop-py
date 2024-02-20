@@ -11,7 +11,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.13"
 pyusb = "*"
 pydantic = "*"
 libusb-package = "^1.0.26.2"
@@ -20,6 +20,9 @@ libusb-package = "^1.0.26.2"
 black = "*"
 pre-commit = "*"
 mypy = "^1.8.0"
+pythonnet = "^3.0.3"
+pyuac = "^0.0.3"
+pywin32 = "^306"
 
 [build-system]
 requires = ["poetry-core"]
