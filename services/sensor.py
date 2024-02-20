@@ -8,6 +8,6 @@ class SensorService:
     def __init__(self, ek_dev: EKDevice) -> None:
         self.ek_dev = ek_dev
 
-    def read_sensor_data(self):
+    def read_sensor_data(self) -> SensorReadResponse:
         buffer = self.ek_dev.request(build_read_request())
         return SensorReadResponse.from_buffer(buffer)

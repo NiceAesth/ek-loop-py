@@ -19,7 +19,7 @@ class RGBService:
         color: tuple[int, int, int] | None = None,
         mode: RGBMode | None = None,
         speed: SpeedMode | None = None,
-    ):
+    ) -> None:
         color = color or self.current_color
         mode = mode or self.current_mode
         speed = speed or self.current_speed

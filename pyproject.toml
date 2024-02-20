@@ -19,6 +19,7 @@ libusb-package = "^1.0.26.2"
 [tool.poetry.group.dev.dependencies]
 black = "*"
 pre-commit = "*"
+mypy = "^1.8.0"
 
 [build-system]
 requires = ["poetry-core"]

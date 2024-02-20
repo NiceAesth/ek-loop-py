@@ -3,7 +3,6 @@ from enum import unique
 
 from . import build_request
 
-# Offsets for the RGB request payload. (Indexed from the end of the header.)
 SPEED_OFFSET = 14
 RED_OFFSET = 16
 GREEN_OFFSET = 17

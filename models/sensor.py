@@ -46,7 +46,7 @@ class SensorReadResponse(BaseModel):
         t2_temp = buffer[15]
         t3_temp = buffer[19]
 
-        flow = (buffer[22] << 16) + (buffer[23] << 8) + buffer[24]
+        flow = float((buffer[22] << 16) + (buffer[23] << 8) + buffer[24])
         flow *= L_H_MULTIPLIER
 
         coolant_status = LevelWarnings(buffer[27])

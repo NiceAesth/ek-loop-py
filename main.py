@@ -14,7 +14,7 @@ sensor_service = SensorService(ek_dev)
 rgb_service = RGBService(ek_dev)
 
 
-def main():
+def main() -> None:
     rgb_service.set_rgb()
 
     while True:
