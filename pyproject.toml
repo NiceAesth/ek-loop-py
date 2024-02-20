@@ -1,0 +1,25 @@
+[tool.isort]
+force_single_line = true
+profile = "black"
+
+[tool.poetry]
+name = "ek-loop-py"
+version = "0.0.1"
+description = "Attempt at interfacing with the EK Loop Connect controller"
+authors = ["NiceAesth <nice@aesth.dev>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pyusb = "*"
+pydantic = "*"
+libusb-package = "^1.0.26.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+pre-commit = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
