@@ -11,7 +11,12 @@ class FanService:
     def __init__(self, ek_dev: EKDevice) -> None:
         self.ek_dev = ek_dev
 
-    def read_fan_speed(self, channel: int) -> SpeedReadResponse:
+    def get_connected_fan_count(self) -> int:
+        """Returns the number of connected fans."""
+        potential_fans = self.get_all_channels()
+        return len([fan for fan in potential_fans if fan.rpm > 0])
+
+    def get_fan_speed(self, channel: int) -> SpeedReadResponse:
         """Reads the speed of a fan.
 
         Args:
@@ -25,7 +30,7 @@ class FanService:
 
     def get_all_channels(self) -> list[SpeedReadResponse]:
         """Reads the speed of all fans."""
-        return [self.read_fan_speed(i) for i in range(FAN_COUNT)]
+        return [self.get_fan_speed(i) for i in range(FAN_COUNT)]
 
     def set_fan_speed(self, channel: int, pwm: int, rpm: int = 0) -> None:
         """Sets the speed of a fan.

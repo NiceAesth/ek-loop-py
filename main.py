@@ -28,6 +28,8 @@ def main() -> None:
             f"Flow: {sensor_data.flow} L/h, Coolant Status: {sensor_data.coolant_status.name}",
         )
         for fan in fan_data:
+            if fan.rpm == 0:
+                continue
             print(f"Fan {fan.channel}: {fan.rpm} RPM ({fan.pwm}%)")
         sleep(1)
 

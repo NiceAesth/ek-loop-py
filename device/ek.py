@@ -5,6 +5,8 @@ import usb.core
 
 EK_VENDOR_ID = 0x0483
 EK_PRODUCT_ID = 0x5750
+
+# Only endpoint 0 is used. I assume the other endpoint is for updating the firmware.
 EK_ENDPOINTS = [
     {
         "read": 0x81,
@@ -30,6 +32,21 @@ class EKDevice:
             raise ValueError("No EK device found")
 
         self.lock = threading.Lock()
+
+    @property
+    def manufacturer(self) -> str:
+        return self.device.manufacturer
+
+    @property
+    def product(self) -> str:
+        return self.device.product
+
+    @property
+    def serial_number(self) -> str:
+        return self.device.serial_number
+
+    def __str__(self) -> str:
+        return f"{self.manufacturer} {self.product} ({self.serial_number})"
 
     def _read(self, endpoint: int = 0) -> bytearray:
         data = self.device.read(
