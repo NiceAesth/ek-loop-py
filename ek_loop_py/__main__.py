@@ -1,12 +1,12 @@
 from contextlib import suppress
 from time import sleep
 
-from device.ek import EKDevice
-from models.rgb import RGBMode as RGBM
-from models.rgb import SpeedMode as SPM
-from services.fan import FanService
-from services.rgb import RGBService
-from services.sensor import SensorService
+from ek_loop_py.device.ek import EKDevice
+from ek_loop_py.models.rgb import RGBMode as RGBM
+from ek_loop_py.models.rgb import SpeedMode as SPM
+from ek_loop_py.services.fan import FanService
+from ek_loop_py.services.rgb import RGBService
+from ek_loop_py.services.sensor import SensorService
 
 ek_dev = EKDevice()
 fan_service = FanService(ek_dev)
@@ -19,7 +19,7 @@ def main() -> None:
 
     while True:
         fan_data = fan_service.get_all_channels()
-        sensor_data = sensor_service.read_sensor_data()
+        sensor_data = sensor_service.get_sensor_data()
         print("\033[H\033[J", end="")
         print(
             f"T1: {sensor_data.t1_temp}°C, T2: {sensor_data.t2_temp}°C, T3: {sensor_data.t3_temp}°C",

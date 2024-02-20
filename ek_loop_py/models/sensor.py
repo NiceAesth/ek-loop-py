@@ -17,7 +17,7 @@ class LevelWarnings(IntEnum):
     OPTIMAL = 1 << 6
 
 
-def build_read_request() -> bytearray:
+def build_sensor_read_request() -> bytearray:
     """Builds a request to read the fan speed.
 
     Args:

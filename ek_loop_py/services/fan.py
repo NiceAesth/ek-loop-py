@@ -1,8 +1,8 @@
-from device.ek import EKDevice
-from models.fan import FAN_COUNT
-from models.fan import SpeedReadResponse
-from models.fan import build_speed_read_request
-from models.fan import build_speed_write_request
+from ek_loop_py.device.ek import EKDevice
+from ek_loop_py.models.fan import FAN_COUNT
+from ek_loop_py.models.fan import SpeedReadResponse
+from ek_loop_py.models.fan import build_speed_read_request
+from ek_loop_py.models.fan import build_speed_write_request
 
 
 class FanService:

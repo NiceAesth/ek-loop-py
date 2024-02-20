@@ -1,9 +1,9 @@
 from warnings import warn
 
-from device.ek import EKDevice
-from models.rgb import RGBMode
-from models.rgb import SpeedMode
-from models.rgb import build_rgb_request
+from ek_loop_py.device.ek import EKDevice
+from ek_loop_py.models.rgb import RGBMode
+from ek_loop_py.models.rgb import SpeedMode
+from ek_loop_py.models.rgb import build_rgb_request
 
 
 class RGBService:

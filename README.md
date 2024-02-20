@@ -6,6 +6,10 @@ This is a Python script that interacts with the EK-Loop Connect fan controller. 
 
 Support for fan control, RGB control and sensor monitoring is offered.
 
+## Installation
+
+See the `Makefile`. This project targets Python 3.11+.
+
 ## Acknowledgements
 
 pavelherr's [ek-loop-connect](https://github.com/pavelherr/ek-loop-connect) linux driver was invaluable in understanding the USB protocol behind the controller.

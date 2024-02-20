@@ -1,4 +1,4 @@
-from device.ek import BUFFER_SIZE
+from ek_loop_py.device.ek import BUFFER_SIZE
 
 
 def build_request(header: bytes, payload: bytes) -> bytearray:
